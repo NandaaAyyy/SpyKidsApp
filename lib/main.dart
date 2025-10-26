@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
-import 'pages/home.dart';
 import 'pages/profile.dart';
 import 'pages/map.dart';
 import 'pages/history.dart';

@@ -3,14 +3,11 @@ import 'dashboard.dart';
 import 'map.dart';
 import 'history.dart';
 
-
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
-
   @override
   State<HomeShell> createState() => _HomeShellState();
 }
-
 class _HomeShellState extends State<HomeShell> {
   int _idx = 0;
   final _pages = const [DashboardPage(), MapPage(), HistoryPage()];
@@ -32,8 +29,9 @@ class _HomeShellState extends State<HomeShell> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, '/profile'),
-        backgroundColor: const Color(0xFF2F80ED),
         child: const Icon(Icons.person),
+        backgroundColor: const Color(0xFF2F80ED),
+        tooltip: 'Profil Orang Tua',
       ),
     );
   }

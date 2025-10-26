@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -57,7 +56,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                   child: const Icon(Icons.school_rounded, size: 96, color: Colors.white),
                 ),
                 const SizedBox(height: 12),
-                const Text('EduTrack', style: TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold)),
+                const Text('Spy Kids App', style: TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 22),
                 Container(
                   padding: const EdgeInsets.all(18),
