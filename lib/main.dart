@@ -4,6 +4,7 @@ import 'pages/home.dart';
 import 'pages/profile.dart';
 import 'pages/map.dart';
 import 'pages/history.dart';
+import 'pages/shell.dart';
 
 void main() {
   runApp(const SpyKidsApp());
@@ -15,7 +16,7 @@ class SpyKidsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EduTrack',
+      title: 'Spy Kids ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3399FF)),
