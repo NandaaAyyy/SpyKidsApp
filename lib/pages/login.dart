@@ -17,13 +17,13 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     super.initState();
     _anim = AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat(reverse: true);
   }
-  @override
-  void dispose() {
-    _anim.dispose();
-    _u.dispose();
-    _p.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _anim.dispose();
+  //   _u.dispose();
+  //   _p.dispose();
+  //   super.dispose();
+  // }
 
   void _login() async {
     setState(() => _loading = true);

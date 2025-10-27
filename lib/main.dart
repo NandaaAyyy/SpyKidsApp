@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
-import 'pages/profile.dart';
 import 'pages/map.dart';
 import 'pages/history.dart';
 import 'pages/shell.dart';
@@ -25,7 +24,6 @@ class SpyKidsApp extends StatelessWidget {
       routes: {
         '/': (c) => const LoginPage(),
         '/home': (c) => const HomeShell(),
-        '/profile': (c) => const ProfilePage(),
         '/map': (c) => const MapPage(),
         '/history': (c) => const HistoryPage(),
       },

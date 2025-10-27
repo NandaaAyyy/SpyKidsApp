@@ -73,7 +73,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text(status, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: _statusColor(status))),
                     const SizedBox(height: 6),
-                    Text('Perbarui status otomatis oleh sistem sekolah atau tekan tombol di bawah untuk demo.', style: TextStyle(color: Colors.grey.shade700)),
+                    Text('Status anak Anda saat ini.', style: const TextStyle(color: Colors.black54)),
                   ]),
                 )
               ],
@@ -83,7 +83,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ElevatedButton.icon(
             onPressed: _toggleStatus,
             icon: const Icon(Icons.sync),
-            label: const Text('Perbarui Status (Demo)'),
+            label: const Text('Perbarui Status'),
             style: ElevatedButton.styleFrom(backgroundColor: color, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
           ),
           const SizedBox(height: 18),
