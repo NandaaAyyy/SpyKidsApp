@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/login.dart';
-import 'pages/dashboard_guru.dart';
-import 'pages/ortu_dashboard.dart';
+import 'pages/dashboard.dart';
+import 'pages/kehadiran.dart';
+import 'pages/profile.dart';
 
 void main() {
   runApp(const SpyKidsApp());
@@ -13,17 +13,18 @@ class SpyKidsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EduTrack UTS Demo',
+      title: 'Spy Kids',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: const Color(0xFF2F80ED),
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2F80ED)),
-        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF6F9FF),
       ),
       initialRoute: '/',
       routes: {
-        '/': (c) => const LoginPage(),
-        '/guru': (c) => const GuruDashboard(),
-        '/ortu': (c) => const OrtuDashboard(),
+        '/': (c) => const DashboardPage(),
+        '/attendance': (c) => const AttendancePage(),
+        '/profile': (c) => const ProfilePage(),
       },
     );
   }

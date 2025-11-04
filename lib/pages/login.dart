@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 const Icon(Icons.school_rounded, size: 90, color: Colors.white),
                 const SizedBox(height: 12),
-                const Text('EduTrack (UTS Demo)', style: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold)),
+                const Text('Spy Kids)', style: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 20),
                 Container(
                   padding: const EdgeInsets.all(16),
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      const Text('Contoh: ketik "guru" pada username untuk masuk sebagai guru, lainnya masuk sebagai orang tua', style: TextStyle(fontSize: 12, color: Colors.black54)),
+                      const Text('Ketik "guru" pada username untuk masuk sebagai guru, lainnya masuk sebagai orang tua', style: TextStyle(fontSize: 12, color: Colors.black54)),
                     ],
                   ),
                 ),
