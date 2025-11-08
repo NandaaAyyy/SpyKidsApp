@@ -132,19 +132,23 @@ class _DashboardPageState extends State<DashboardPage> {
           // messages
           const Text('Pesan dari Guru', style: TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
-          Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: ListTile(
-              leading: const CircleAvatar(child: Icon(Icons.person), backgroundColor: Color(0xFFEEF7FF)),
-              title: const Text('Bu Siti Aminah'),
-              subtitle: const Text('Anak Anda aktif hari ini pada pelajaran IPA.'),
-              trailing: Text(StorageService.getLastUpdate(), style: const TextStyle(color: Colors.black54)),
-            ),
-          ),
-
-          const SizedBox(height: 18),
-
-          // quick action row
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/images/kim.jpeg', ),
+                ),
+                const SizedBox(width: 12),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text("Halo, Orang Tua", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text("Selamat datang di Spy Kids"),
+                    ],
+                    ),
+                    ],
+                    ),
+                    const SizedBox(height: 18),// quick action row
           Row(
             children: [
               Expanded(child: _quickAction(Icons.map, 'Lihat Peta', () => Navigator.pushNamed(context, '/map'))),

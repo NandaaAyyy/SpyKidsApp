@@ -61,15 +61,15 @@ class _MapPageState extends State<MapPage> {
                             children: [
                               const Icon(Icons.location_on, size: 64, color: Colors.red),
                               const SizedBox(height: 8),
-                              Text("Lat: ${_pos!.latitude.toStringAsFixed(6)}"),
-                              Text("Lng: ${_pos!.longitude.toStringAsFixed(6)}"),
+                              Text("Latitude: ${_pos!.latitude.toStringAsFixed(6)}"),
+                              Text("Longitude: ${_pos!.longitude.toStringAsFixed(6)}"),
                             ],
                           ),
               ),
             ),
             const SizedBox(height: 20),
             const Text(
-              "Posisi ditentukan oleh perangkat ini (demo).",
+              "Posisi anak anda akan diperbarui setiap kali anak melakukan check-in menggunakan aplikasi Spy Kids pada perangkat mereka.",
               style: TextStyle(fontSize: 14, color: Colors.black54),
               textAlign: TextAlign.center,
             ),
