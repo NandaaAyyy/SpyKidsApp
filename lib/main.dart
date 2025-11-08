@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'pages/login.dart';
+import 'pages/login_page.dart';
+import 'pages/home.dart';
 import 'pages/map.dart';
 import 'pages/history.dart';
-import 'pages/shell.dart';
+import 'services/storage_service.dart';
+import 'pages/profile.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await StorageService.init(); // inisialisasi SharedPreferences
   runApp(const SpyKidsApp());
 }
 
@@ -14,7 +18,7 @@ class SpyKidsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Spy Kids ',
+      title: 'Spy Kids',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3399FF)),
@@ -26,6 +30,8 @@ class SpyKidsApp extends StatelessWidget {
         '/home': (c) => const HomeShell(),
         '/map': (c) => const MapPage(),
         '/history': (c) => const HistoryPage(),
+        '/profile': (c) => const ProfilePage(),
+
       },
     );
   }

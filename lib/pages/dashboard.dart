@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../services/storage_service.dart';
+import '../models/kehadiran.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -13,6 +15,23 @@ class _DashboardPageState extends State<DashboardPage> {
 
   static String _formatTime(DateTime t) => "${t.hour.toString().padLeft(2,'0')}:${t.minute.toString().padLeft(2,'0')}";
 
+  @override
+  void initState() {
+    super.initState();
+    _loadFromStorage();
+  }
+
+  Future<void> _loadFromStorage() async {
+    final s = StorageService.getStatus();
+    final lu = StorageService.getLastUpdate();
+    final as = StorageService.getAttendanceScore();
+    setState(() {
+      status = s;
+      lastUpdate = lu;
+      attendanceScore = as;
+    });
+  }
+
   void _toggleStatus() {
     setState(() {
       if (status == 'Di Sekolah') {
@@ -25,6 +44,18 @@ class _DashboardPageState extends State<DashboardPage> {
       lastUpdate = _formatTime(DateTime.now());
       showNotifDot = true;
     });
+
+    // simpan ke storage
+    StorageService.setStatus(status);
+    StorageService.setLastUpdate(lastUpdate);
+
+    // tambah ke riwayat (hari ini)
+    final today = DateTime.now();
+    final date = "${today.year.toString().padLeft(4,'0')}-${today.month.toString().padLeft(2,'0')}-${today.day.toString().padLeft(2,'0')}";
+    final history = StorageService.getHistory();
+    history.insert(0, KehadiranItem(date: date, status: status));
+    final truncated = history.take(50).toList();
+    StorageService.setHistory(truncated);
   }
 
   @override
@@ -107,7 +138,7 @@ class _DashboardPageState extends State<DashboardPage> {
               leading: const CircleAvatar(child: Icon(Icons.person), backgroundColor: Color(0xFFEEF7FF)),
               title: const Text('Bu Siti Aminah'),
               subtitle: const Text('Anak Anda aktif hari ini pada pelajaran IPA.'),
-              trailing: Text('09:12', style: TextStyle(color: Colors.black54)),
+              trailing: Text(StorageService.getLastUpdate(), style: const TextStyle(color: Colors.black54)),
             ),
           ),
 

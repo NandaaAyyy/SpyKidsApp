@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
 class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin {
   final TextEditingController _u = TextEditingController();
   final TextEditingController _p = TextEditingController();
@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     super.initState();
     _anim = AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat(reverse: true);
   }
+
   @override
   void dispose() {
     _anim.dispose();
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     super.dispose();
   }
 
-   void _login() async {
+  void _login() async {
     setState(() => _loading = true);
     await Future.delayed(const Duration(milliseconds: 600));
     if (_u.text.trim() == 'ortu' && _p.text.trim() == '1234') {
@@ -38,7 +39,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     setState(() => _loading = false);
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
     final gradient = const LinearGradient(colors: [Color(0xFF56CCF2), Color(0xFF2F80ED)], begin: Alignment.topLeft, end: Alignment.bottomRight);
     return Scaffold(
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                       ),
                       const SizedBox(height: 8),
                       TextButton(
-                        onPressed: () => showDialog(context: context, builder: (_) => const AlertDialog(title: Text('Info'), content: Text('Gunakan username: ortu dan password: 1234'))),
+                        onPressed: () => showDialog(context: context, builder: (_) => const AlertDialog(title: Text('Info'), content: Text('Gunakan username: ortu dan password: 1234 untuk login'))),
                         child: const Text('Butuh bantuan?'),
                       )
                     ],
