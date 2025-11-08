@@ -24,5 +24,10 @@ flutter:
 
   assets:
   - assets/images/kim.jpeg
-
+  - assets/images/rose.jpeg
+  - assets/images/dashboard.jpg
+  - assets/images/map.jpg
+  - assets/images/history.jpg   
+  - assets/images/profile.jpg
+  - assets/images/login.jpg
     

@@ -67,10 +67,9 @@ class _DashboardPageState extends State<DashboardPage> {
         children: [
           Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: color.withOpacity(0.14), borderRadius: BorderRadius.circular(12)),
-                child: const Icon(Icons.child_care, size: 36, color: Color(0xFF2F80ED)),
+              CircleAvatar(
+                radius: 28,
+                backgroundImage: AssetImage('assets/images/rose.jpeg'),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -136,19 +135,20 @@ class _DashboardPageState extends State<DashboardPage> {
             children: [
               CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/images/kim.jpeg', ),
+                backgroundImage: AssetImage('assets/images/kim.jpeg'),
                 ),
                 const SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text("Halo, Orang Tua", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text("Selamat datang di Spy Kids"),
-                    ],
-                    ),
-                    ],
-                    ),
-                    const SizedBox(height: 18),// quick action row
+                  children: const 
+                  [Text("Halo, Orang Tua", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text("Selamat datang di Spy Kids"),
+      ],
+    ),
+  ],
+),
+const SizedBox(height: 18),
+// quick action row
           Row(
             children: [
               Expanded(child: _quickAction(Icons.map, 'Lihat Peta', () => Navigator.pushNamed(context, '/map'))),

@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Bu Siti Aminah",
+                  "Pak Jun",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const Text("Orang Tua / Wali Murid",
